@@ -1,9 +1,13 @@
 const btnToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-if (localStorage.getItem('theme') === 'dark') {
-	html.setAttribute('data-theme', 'dark');
-	btnToggle.textContent = '☀️';
+{
+	const theme = localStorage.getItem('theme');
+
+	if (!theme || theme === 'dark') {
+		html.setAttribute('data-theme', 'dark');
+		btnToggle.textContent = '☀️';
+	}
 }
 
 btnToggle.addEventListener('click', () => {
