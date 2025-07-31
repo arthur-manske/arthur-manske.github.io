@@ -64,8 +64,8 @@
 }
 
 .about-section li {
-    background: var(--color-primary);
-    color: #fff;
+    background-color: var(--color-primary);
+    color:            var(--color-themed-text);
     padding: 1rem;
     border-radius: 8px;
     font-size: 1rem;
@@ -133,8 +133,8 @@
 }
 
 .card .btn:hover {
-    background-color: var(--color-themed-background);
-    color:            var(--color-themed-hover);
+    filter: contrast(1.2);
+    color: var(--color-themed-hover);
 }
 
 .card h3 {
@@ -150,7 +150,12 @@
     background-image:    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/txfs-card.jpeg");
 }
 
+.usm-card h3, .txfs-card h3 {
+	font-size: 1.3rem;
+}
+
 .usm-card p, .txfs-card p {
+    font-size:               1.2rem;
     backdrop-filter:         blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
@@ -160,4 +165,11 @@
     background-size:     cover;
     background-position: center;
     color:               #cdcdcd;
+    cursor:              none;
+}
+
+@media (max-width: 768px) {
+    .about-section li:hover, .card:hover {
+        transform: none !important;
+    }
 }

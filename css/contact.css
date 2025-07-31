@@ -63,3 +63,9 @@
     color: var(--color-themed-hover);
     transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+    .contact-form button:hover {
+	transform: none !important;
+    }
+}

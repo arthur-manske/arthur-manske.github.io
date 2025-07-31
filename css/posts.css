@@ -97,50 +97,8 @@
     transform: scale(1.05);
 }
 
-.post-aesthetics {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-aesthetics.jpeg");
-}
-
-.post-violence {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-violence.jpeg");
-}
-
-.post-os-guide {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-os-guide.jpeg");
-}
-
-.post-unix-legacy {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-unix-legacy.jpeg");
-}
-
-.post-fnaf {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-fnaf.jpeg");
-}
-
-.post-soul {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-soul.jpeg");
-}
-
-.post-libc {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-libc.jpeg");
-}
-
-.post-plibs {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-plibs.jpeg");
-}
-
-.post-game-engine {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-game-engine.jpeg");
-}
-
-.post-hh {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-hh.jpeg");
-}
-
-.post-usm-first-alpha {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-usm-first-alpha.jpeg");
-}
-
-.post-re4 {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-re4.jpeg");
+@media (max-width: 768px) {
+    .post:hover, .post a.btn:hover {
+        transform: none !important;
+    }
 }

@@ -38,7 +38,7 @@
     font-weight: bold;
     border-radius: 5px;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 .error-text .btn:hover {

@@ -1,23 +1,25 @@
 :root {
     --color-bg: #f4f6f8;
-    --color-text: #1e1e1e;
-    --color-primary: #0066cc;
-    --color-primary-dark: #004080;
-    --color-border: #0066cc;
-    --color-muted: #b0b0b0;
-    --color-btn-disabled: #cccccc;
-    --color-themed-text: #121212;
-    --color-themed-hover: #484848;
-    --color-themed-background-transparent: #eeeeee55;
-    --color-themed-background:             #eeeeee;
+    --color-text: #1b1b1b;
+    --color-primary: #1a75ff;
+    --color-primary-dark: #0050a8;
+    --color-border: #0050a8;
+    --color-muted: #8a8a8a;
+    --color-btn-disabled: #c2c2c2;
+    --color-themed-text: #0d0d0d;
+    --color-themed-hover: #000000;
+    --color-themed-background-transparent: #e6e6e6bb;
+    --color-themed-background: #e6e6e6;
 }
 
 [data-theme="dark"] {
-    --color-bg: #121212;
-    --color-text: #e6e6e6;
-    --color-border: #3399ff;
+    --color-primary: #0050a8;
+    --color-primary-dark: #003370;
+    --color-bg: #0d0d0d;
+    --color-text: #eaeaea;
+    --color-border: #4da6ff;
     --color-muted: #666666;
-    --color-btn-disabled: #444444;
+    --color-btn-disabled: #333333;
     --color-themed-text: #cdcdcd;
     --color-themed-hover: #ffffff;
     --color-themed-background-transparent: #33333333;
@@ -54,7 +56,7 @@ body {
 a {
     color: var(--color-primary);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: all 0.5s ease-in-out;
 }
 
 main a:hover {
@@ -89,6 +91,8 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
+    
+    transition: all 0.5s ease-in-out;
 }
 
 .btn-theme {
@@ -96,7 +100,7 @@ header {
     border: none;
     font-size: 1.4rem;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: all 0.5s ease-in-out;
 }
 
 header nav ul {
@@ -110,7 +114,7 @@ header a {
     font-weight: bold;
     padding: 0.5rem;
     color: var(--color-themed-text);
-    transition: transform 0.2s ease, color 0.4s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 header a:hover {
@@ -130,8 +134,8 @@ main {
     display: block;
 
     background-color: var(--color-primary);
-    color: #fff;
-    transition: background-color 0.3s;
+    color:            #fefefe;
+    transition: all 0.5s ease-in-out;
 
     padding: 0.8rem;
     margin: 1rem;
@@ -146,16 +150,12 @@ main {
 
 .btn:hover {
     background-color: var(--color-primary-dark);
-    color: #fff;
+    color:            #ffffff;
 }
 
 .btn-disabled {
     background-color: var(--color-btn-disabled);
     cursor: not-allowed;
-}
-
-.btn-disabled:hover {
-    background-color: var(--color-btn-disabled);
 }
 
 footer {
@@ -170,6 +170,7 @@ footer {
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 footer p {
@@ -219,11 +220,11 @@ footer p {
     width: 100%;
     background: var(--color-themed-text);
     border-radius: 2px;
-    transition: 0.3s ease;
+    transition: all 0.5s ease-in-out;
 }
 
 header nav {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -233,7 +234,7 @@ header nav {
         position: absolute;
         top: 100%;
         right: 5%;
-        background-color: var(--color-themed-background-transparent);
+        background-color: var(--color-themed-background);
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
         width: max-content;
@@ -245,10 +246,6 @@ header nav {
         opacity: 0;
         pointer-events: none;
         z-index: 1000;
-    }
-
-    header {
-        position: relative;
     }
 
     .menu-icon {
@@ -275,5 +272,9 @@ header nav {
 	font-size:     1.2rem;
 	text-align:    center;
 	border-bottom: 3px solid var(--color-themed-text);
+    }
+
+    header nav a:hover {
+        transform: none !important;
     }
 }
