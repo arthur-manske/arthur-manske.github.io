@@ -1,5 +1,7 @@
 const username = "arthur-manske";
 const container = document.getElementById("projects-grid");
+const CACHE_KEY = "projects-cache";
+const CACHE_TTL = 1000 * 60 * 30; // 30 min
 
 async function fetchAllRepos() {
     const allRepos = [];
@@ -7,7 +9,7 @@ async function fetchAllRepos() {
 
     while (true) {
         const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}`);
-        if (!res.ok) throw new Error("Erro ao acessar GitHub API");
+	if (!res.ok) throw new Error("Erro ao acessar GitHub API");
 
         const repos = await res.json();
         if (repos.length === 0) break;
@@ -21,8 +23,21 @@ async function fetchAllRepos() {
 
 async function loadProjects() {
     try {
-        const repos = await fetchAllRepos();
-        const projects = repos.filter(repo => repo.topics.includes("portofolio"));
+        let repos = [];
+        const cache = localStorage.getItem(CACHE_KEY);
+        const cacheTime = localStorage.getItem(`${CACHE_KEY}-time`);
+
+        if (cache && cacheTime && Date.now() - cacheTime < CACHE_TTL) {
+            repos = JSON.parse(cache);
+        } else {
+            repos = await fetchAllRepos();
+            localStorage.setItem(CACHE_KEY, JSON.stringify(repos));
+            localStorage.setItem(`${CACHE_KEY}-time`, Date.now());
+        }
+
+        const projects = repos.filter(
+            repo => Array.isArray(repo.topics) && repo.topics.includes("portofolio")
+        );
 
         if (projects.length === 0) {
             document.getElementById("projects")?.remove();
@@ -36,16 +51,11 @@ async function loadProjects() {
 
             try {
                 const imgRes = await fetch(logoUrl, { method: "HEAD" });
-                if (imgRes.ok) {
-                    finalImg = logoUrl;
-                }
-            } catch (err) {
-                console.log(`Erro ao tentar logo em ${logoUrl}:`, err);
-            }
+                if (imgRes.ok) finalImg = logoUrl;
+            } catch {}
 
-            // usa homepage se disponível
-            const projectLink = repo.homepage && repo.homepage.trim() !== "" 
-                ? repo.homepage 
+            const projectLink = repo.homepage && repo.homepage.trim() !== ""
+                ? repo.homepage
                 : repo.html_url;
 
             const div = document.createElement("div");
@@ -60,7 +70,7 @@ async function loadProjects() {
         }
     } catch (e) {
         console.error(e);
-        container.innerHTML = "<p>Erro ao carregar projetos.</p>";
+        container.innerHTML = `<p> :&#47; Infelizmente, ocorreu uma falha ao acessar os projetos por meio da GitHub API.<br> Tente acessar os projetos diretamente por <a href="https://github.com/${username}/"> ${username}</a> </p>`;
     }
 }
 
