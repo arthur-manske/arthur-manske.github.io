@@ -114,7 +114,6 @@
     display:         flex;
     flex-direction:  column;
     justify-content: space-between;
-
     flex:            1;
 }
 
@@ -141,4 +140,24 @@
 .card h3 {
     font-size: 1.2rem;
     margin:    1rem;
+}
+
+.usm-card {
+    background-image:    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/usm-card.jpeg");
+}
+
+.txfs-card {
+    background-image:    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/txfs-card.jpeg");
+}
+
+.usm-card p, .txfs-card p {
+    backdrop-filter:         blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.txfs-card, .usm-card {
+    flex:                1 1 auto;
+    background-size:     cover;
+    background-position: center;
+    color:               #cdcdcd;
 }
