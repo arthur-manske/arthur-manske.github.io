@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de contato de Arthur de Souza Manske.">
+    <meta name="author" content="Arthur de Souza Manske">
+    <title>Contato - Arthur de Souza Manske</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <!-- Avatar do github -->
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/130318764?v=4" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="btn-theme">🌙</button>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>        
+        
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./posts.html">Posts</a></li>
+                <li><a href="./contact.html" class="active">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner banner-main">
+            <div class="banner-text">
+                <h2>Entre em contato</h2>
+                <p>Preencha o formulário abaixo para me enviar uma mensagem.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <form action="https://formsubmit.co/f573d80b747f32870792a155d49e8bcf" method="POST" class="contact-form">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://arthur-manske.github.io/contact.html?success=1">
+
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Digite sua mensagem"></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+        
+	<section class="banner banner-end">
+            <div class="banner-text">
+                <h2>Seja respeitoso</h2>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/arthur-de-s-manske-b0aa58377/">💼 LinkedIn</a>
+            <a href="https://github.com/arthur-manske">🐙 GitHub</a>
+        </div>
+        <p>© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/dark.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("success")) {
+          alert("Mensagem enviada com sucesso!");
+      }
+    </script>
+</body>
+</html>

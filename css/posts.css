@@ -1,0 +1,146 @@
+.banner {
+    background-size:     cover;
+    background-position: center;
+    color:               #fff;
+
+    padding:    13rem 2rem;
+    text-align: center;
+
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+}
+
+.banner-main {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/banner-posts-main.jpeg");
+}
+
+.banner-end {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/banner-posts-end.jpeg");
+}
+
+.banner-text p {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.posts-section {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.posts-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.post {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+
+   background-color: var(--color-primary);
+   color: #bebebe;
+   
+   padding:          1rem;
+   border-radius:    6px;
+   transition:       all 0.5s ease-in-out;
+   
+   background-size:     cover;
+   background-position: center;
+}
+
+.post h3 {
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.post p {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.post a.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: all 0.5s ease-in-out;
+    background: var(--color-themed-background-transparent); 
+    color: var(--color-themed-text);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.post a.btn:hover {
+    color:      var(--color-themed-hover);
+    transform:  scale(1.05);
+}
+
+.post:hover {
+    transform: scale(1.05);
+}
+
+.post-aesthetics {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-aesthetics.jpeg");
+}
+
+.post-violence {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-violence.jpeg");
+}
+
+.post-os-guide {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-os-guide.jpeg");
+}
+
+.post-unix-legacy {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-unix-legacy.jpeg");
+}
+
+.post-fnaf {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-fnaf.jpeg");
+}
+
+.post-soul {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-soul.jpeg");
+}
+
+.post-libc {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-libc.jpeg");
+}
+
+.post-plibs {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-plibs.jpeg");
+}
+
+.post-game-engine {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-game-engine.jpeg");
+}
+
+.post-hh {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-hh.jpeg");
+}
+
+.post-usm-first-alpha {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-usm-first-alpha.jpeg");
+}
+
+.post-re4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/logo-post-re4.jpeg");
+}

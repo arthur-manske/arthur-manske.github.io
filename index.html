@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio pessoal de Arthur de Souza Manske. Projetos, habilidades e contato.">
+    <meta name="keywords" content="portfólio, programação, kernel, sistemas UNIX, Arthur Manske, desenvolvimento web, C, Rust">
+    <meta name="author" content="Arthur de Souza Manske">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Portfólio - Arthur de Souza Manske">
+    <meta property="og:description" content="Confira meus projetos, experiências e habilidades em desenvolvimento.">
+    <meta property="og:image" content="https://arthur-manske.github.io/assets/profile.png">
+    <meta property="og:url" content="https://arthur-manske.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+
+    <title>Portfólio - Arthur de Souza Manske</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- Avatar do github -->
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/130318764?v=4" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle" class="btn-theme">🌙</button>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>        
+        
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./posts.html">Posts</a></li>
+                <li><a href="./contact.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner banner-main">
+            <div class="banner-text">
+               <h2>Bem-vindo ao portfólio de A.S.M </h2>
+                <p>Um desenvolvedor apaixonado por <span style="color:#ff33ff;">conhecimento</span> e sistemas <span style="color:#33ffff;">UNIX™</span>.</p>
+                <a href="#static-projects" class="btn">Ver Projetos</a>
+            </div>
+        </section>
+
+	<!-- Nota: Posso expandir mais no futuro -->
+        <section id="about" class="about-section">
+	     <h2> Arthur de Souza Manske - 17 anos </h2>
+	     <p> Sou um desenvolvedor Full-Stack com experiência vasta em sistemas UNIX&trade;, desenvolvimento de kernels, bibliotecas de baixo nível, sistemas de arquivos e com alta capacidade para criação de aplicações web e APIs seguras, performáticas e de arquitetura limpa. Bom, vamos então detalhar minhas habilidades: </p>
+	     <ul>
+	         <li><span>Linguagens de programação:</span><br> C, C++, C#, Java, TypeScript, JavaScript, Lua, Python, Shell Script e Assembly (x86/x86_64).</li>
+	         <li><span>Sistemas operacionais:</span><br> Linux, DragonFlyBSD e diversos sistemas UNIX-like (administração e desenvolvimento avançado).</li>
+	         <li><span>Desenvolvimento de software:</span><br> Arquitetura de kernels, criação de bibliotecas de baixo nível, sistemas de arquivos, aplicações web e APIs escaláveis.</li>
+	         <li><span>Habilidades adicionais:</span><br> Inglês avançado, comunicação clara, liderança técnica e forte capacidade de abstração e resolução de problemas.</li>
+	      </ul>
+	</section>
+
+	<section class="banner banner-mid">
+            <div class="banner-text">
+	       <h2> Mas e o que eu fiz com isso? </h2>
+	       <p> Abaixo, você poderá ler alguns dos projetos mais interessantes que produzi com minhas habilidades e tempo livre, porque não apenas de dizeres vive um programador, mas obviamente também de programar! </p>
+	    </div>
+        </section>
+
+        <section id="static-projects" class="projects-section">
+            <h2>Meus projetos em destaque</h2>
+            <div class="projects-grid" id="static-projects-grid">
+                <div class="card usm-card">
+                    <h3>USM - Research Uniplexed Souza Manske Operating System </h3>
+                    <p>Sistema operacional inspirado por UNIX&trade; 7th Edition, modernizado com suporte a arquiteturas x86, mitigação de vulnerabilidades modernas, agendador avançado, file systems modernos e compatibilidade ABI com Linux e FreeBSD.</p>
+		    <p> Produção principalmente inspirada pela família primordial do UNIX&trade;, o desenvolvimento desse sistema só foi possível graças aos materiais da MIT sobre o XV6, a versão 1.0 do sistema operacional LINUX&trade; e também a disponibilização dos códigos-fonte na The UNIX&trade; Heritage Society. </p>
+		    <p> Para mais informações sobre o sistema ou interesse em contribuição, entre em contato. </p>
+		</div>
+                <div class="card txfs-card">
+                    <h3>TXFS</h3>
+		    <p> Um sistema de arquivos estilo UNIX&trade; com suporte nativo a RAID dinâmico via software (similarmente ao ZFS), journaling, snapshots, criptografia nativa a nível de sistema de arquivos ou por arquivo, compressão por sistema de arquivos ou por arquivo, deduplicação de dados, verificação de integridade avançada, subvolumes com atributos diferentes e possibilidade de montagem separada, suporte a atributos extendidos e além de tudo isso ofereceria otimizações avançadas por meio da detetecção do tipo de dispositivo (otimizações específicas para dispositivos onde a fragmentação não importa, SSDs com tempo de vida limitado, entre outros).
+                </div>
+
+            </div>
+        </section>
+	    
+	<hr id="separator">
+
+        <section id="projects" class="projects-section">
+            <h2>Meus projetos (GitHub)</h2>
+            <div class="projects-grid" id="projects-grid">
+            </div>
+        </section>
+	
+	<section class="banner banner-end">
+            <div class="banner-text">
+               <h2> Explore meus posts pessoais </h2>
+	       <p> Bom, se você chegou até aqui é porque se interessou, não é? - Dá uma olhada, estou sempre adicionando novidades </p>
+	       <a href="posts.html" class="btn"> Ver Posts </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+	    <div class="social-links">
+		<a href="https://www.linkedin.com/in/arthur-de-s-manske-b0aa58377/">💼 LinkedIn</a>
+		<a href="https://github.com/arthur-manske">🐙 GitHub</a>
+	    </div>
+
+	    <p>© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/projects.js"></script>
+    <script src="js/dark.js"></script>
+</body>
+</html>
