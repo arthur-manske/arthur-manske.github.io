@@ -12,7 +12,7 @@ async function fetchAllRepos() {
             const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}`);
             
             if (res.status === 403) {
-                throw new Error("GitHub API Rate Limit exceeded. Please try again later.");
+                throw new Error("GitHub API Rate Limit exceeded. Please try again later or check your profile on GitHub.");
             }
             if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
 
@@ -35,15 +35,13 @@ async function fetchProjectMetadata(repo) {
     for (const branch of branches) {
         const metadataUrl = `https://raw.githubusercontent.com/${username}/${repo.name}/${branch}/.portfolio.json`;
         try {
-            // Pequeno delay para evitar Rate Limit do GitHub Raw
-            await new Promise(resolve => setTimeout(resolve, 150));
-            
+            await new Promise(resolve => setTimeout(resolve, 100));
             const res = await fetch(metadataUrl);
             if (res.ok) {
                 return await res.json();
             }
         } catch (e) {
-            console.log(`Network error fetching metadata for ${repo.name} on ${branch}. URL: ${metadataUrl}`);
+            // Silent fail for metadata
         }
     }
     return null;
@@ -52,15 +50,22 @@ async function fetchProjectMetadata(repo) {
 async function loadProjects() {
     try {
         let repos = [];
-        const cache = localStorage.getItem(CACHE_KEY);
-        const cacheTime = localStorage.getItem(`${CACHE_KEY}-time`);
+        let cache = null;
+        let cacheTime = null;
+
+        try {
+            cache = localStorage.getItem(CACHE_KEY);
+            cacheTime = localStorage.getItem(`${CACHE_KEY}-time`);
+        } catch (e) {}
 
         if (cache && cacheTime && Date.now() - cacheTime < CACHE_TTL) {
             repos = JSON.parse(cache);
         } else {
             repos = await fetchAllRepos();
-            localStorage.setItem(CACHE_KEY, JSON.stringify(repos));
-            localStorage.setItem(`${CACHE_KEY}-time`, Date.now());
+            try {
+                localStorage.setItem(CACHE_KEY, JSON.stringify(repos));
+                localStorage.setItem(`${CACHE_KEY}-time`, Date.now());
+            } catch (e) {}
         }
 
         const projects = repos.filter(
@@ -75,17 +80,17 @@ async function loadProjects() {
 
         const lang = window.i18n ? window.i18n.getCurrentLang() : 'pt';
 
+        // Clear container before appending to avoid duplication on lang change
+        if (container) container.innerHTML = "";
+
         for (const repo of projects) {
-            // 1. Try to get Advanced Metadata
             const metadata = await fetchProjectMetadata(repo);
             
-            // 2. Resolve Description
             let finalDescription = repo.description || "Sem descrição.";
             if (metadata && metadata.description) {
                 finalDescription = metadata.description[lang] || metadata.description['en'] || metadata.description['pt'] || finalDescription;
             }
 
-            // 3. Resolve Logo
             const logoUrl = `https://raw.githubusercontent.com/${username}/${repo.name}/${repo.default_branch || "master"}/assets/.logo-portofolio.jpeg`;
             let finalImg = repo.owner.avatar_url;
 
@@ -94,7 +99,6 @@ async function loadProjects() {
                 if (imgRes.ok) finalImg = logoUrl;
             } catch {}
 
-            // 4. Resolve Link
             const projectLink = (metadata && metadata.demo) 
                 ? metadata.demo 
                 : (repo.homepage && repo.homepage.trim() !== "" ? repo.homepage : repo.html_url);
@@ -110,14 +114,14 @@ async function loadProjects() {
             container.appendChild(div);
         }
     } catch (e) {
-        console.error(e);
-        container.innerHTML = `<p> :&#47; Infelizmente, ocorreu uma falha ao acessar os projetos por meio da GitHub API.<br> Tente acessar os projetos diretamente por <a href="https://github.com/${username}/"> ${username}</a> </p>`;
+        console.error("Project load error:", e);
+        if (container) {
+            container.innerHTML = `<p> :&#47; ${e.message || "Ocorreu uma falha ao acessar a API do GitHub."}<br> Tente acessar os projetos diretamente por <a href="https://github.com/${username}/"> ${username}</a> </p>`;
+        }
     }
 }
 
-// Ensure i18n is ready before loading projects
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadProjects);
-} else {
+// We wait for i18n to be ready
+window.addEventListener('load', () => {
     loadProjects();
-}
+});
