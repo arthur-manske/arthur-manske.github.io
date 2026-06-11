@@ -35,45 +35,50 @@
             <span></span>
         </label>        
         
-        <nav>
-            <ul>
-                <li><a href="./index.html">Início</a></li>
-                <li><a href="./posts.html">Posts</a></li>
-                <li><a href="./contact.html">Contato</a></li>
-            </ul>
+<nav>
+                <ul>
+                    <li><a href="./index.html" data-i18n="nav_home">Início</a></li>
+                    <li><a href="./posts.html" data-i18n="nav_posts">Posts</a></li>
+                    <li><a href="./contact.html" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+                <div class="lang-switch">
+                    <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
+                    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+                </div>
+            </nav>
         </nav>
     </header>
 
     <main>
         <section class="banner banner-main">
             <div class="banner-text">
-               <h2>Bem-vindo ao portfólio de A.S.M </h2>
-                <p>Um desenvolvedor apaixonado por <span style="color:#ff33ff;">conhecimento</span> e sistemas <span style="color:#33ffff;">UNIX™</span>.</p>
-                <a href="#static-projects" class="btn">Ver Projetos</a>
+               <h2 data-i18n="welcome_title">Bem-vindo ao portfólio de A.S.M </h2>
+                <p data-i18n="welcome_subtitle">Um desenvolvedor apaixonado por <span style="color:#ff33ff;">conhecimento</span> e sistemas <span style="color:#33ffff;">UNIX™</span>.</p>
+                <a href="#static-projects" class="btn" data-i18n="btn_view_projects">Ver Projetos</a>
             </div>
         </section>
 
 	<!-- Nota: Posso expandir mais no futuro -->
         <section id="about" class="about-section">
-	     <h2> Arthur de Souza Manske - 18 anos </h2>
-	     <p> Sou um desenvolvedor Full-Stack com experiência vasta em sistemas UNIX&trade;, desenvolvimento de kernels, bibliotecas de baixo nível, sistemas de arquivos e com alta capacidade para criação de aplicações web e APIs seguras, performáticas e de arquitetura limpa. Bom, vamos então detalhar minhas habilidades: </p>
+	     <h2 data-i18n="about_title"> Arthur de Souza Manske - 18 anos </h2>
+	     <p data-i18n="about_text"> Sou um desenvolvedor Full-Stack com experiência vasta em sistemas UNIX&trade;, desenvolvimento de kernels, bibliotecas de baixo nível, sistemas de arquivos e com alta capacidade para criação de aplicações web e APIs seguras, performáticas e de arquitetura limpa. Bom, vamos então detalhar minhas habilidades: </p>
 	     <ul>
-	         <li><span>Linguagens de programação:</span><br> C, C++, C#, Java, TypeScript, JavaScript, Lua, Python, Shell Script e Assembly (x86/x86_64).</li>
-	         <li><span>Sistemas operacionais:</span><br> Linux, DragonFlyBSD e diversos sistemas UNIX-like (administração e desenvolvimento avançado).</li>
-	         <li><span>Desenvolvimento de software:</span><br> Arquitetura de kernels, criação de bibliotecas de baixo nível, sistemas de arquivos, aplicações web e APIs escaláveis.</li>
-	         <li><span>Habilidades adicionais:</span><br> Inglês avançado, comunicação clara, liderança técnica e forte capacidade de abstração e resolução de problemas.</li>
+	         <li><span data-i18n="skill_langs">Linguagens de programação:</span><br> C, C++, C#, Java, TypeScript, JavaScript, Lua, Python, Shell Script e Assembly (x86/x86_64).</li>
+	         <li><span data-i18n="skill_os">Sistemas operacionais:</span><br> Linux, DragonFlyBSD e diversos sistemas UNIX-like (administração e desenvolvimento avançado).</li>
+	         <li><span data-i18n="skill_soft">Desenvolvimento de software:</span><br> Arquitetura de kernels, criação de bibliotecas de baixo nível, sistemas de arquivos, aplicações web e APIs escaláveis.</li>
+	         <li><span data-i18n="skill_add">Habilidades adicionais:</span><br> Inglês avançado, comunicação clara, liderança técnica e forte capacidade de abstração e resolução de problemas.</li>
 	      </ul>
 	</section>
 
 	<section class="banner banner-mid">
             <div class="banner-text">
-	       <h2> Mas e o que eu fiz com isso? </h2>
-	       <p> Abaixo, você poderá ler alguns dos projetos mais interessantes que produzi com minhas habilidades e tempo livre, porque não apenas de dizeres vive um programador, mas obviamente também de programar! </p>
+	       <h2 data-i18n="projects_intro_title"> Mas e o que eu fiz com isso? </h2>
+	       <p data-i18n="projects_intro_text"> Abaixo, você poderá ler alguns dos projetos mais interessantes que produzi com minhas habilidades e tempo livre, porque não apenas de dizeres vive um programador, mas obviamente também de programar! </p>
 	    </div>
         </section>
 
         <section id="projects" class="projects-section">
-            <h2>Meus projetos disponíveis no GitHub</h2>
+            <h2 data-i18n="github_projects_title">Meus projetos disponíveis no GitHub</h2>
             <div class="projects-grid" id="projects-grid">
             </div>
         </section>
@@ -81,17 +86,17 @@
 	<hr id="separator">
         
 	<section id="static-projects" class="projects-section">
-            <h2>Projetos em produção... </h2>
+            <h2 data-i18n="production_projects_title">Projetos em produção... </h2>
             <div class="projects-grid" id="static-projects-grid">
                 <div class="card usm-card">
-                    <h3>USM - Research Uniplexed Souza Manske Operating System </h3>
-                    <p>Sistema operacional inspirado por UNIX&trade; 7th Edition, modernizado com suporte a arquiteturas x86, mitigação de vulnerabilidades modernas, agendador avançado, file systems modernos e compatibilidade ABI com Linux e FreeBSD.
+                    <h3 data-i18n="usm_title">USM - Research Uniplexed Souza Manske Operating System </h3>
+                    <p data-i18n="usm_text">Sistema operacional inspirado por UNIX&trade; 7th Edition, modernizado com suporte a arquiteturas x86, mitigação de vulnerabilidades modernas, agendador avançado, file systems modernos e compatibilidade ABI com Linux e FreeBSD.
 		    <br> Produção principalmente inspirada pela família primordial do UNIX&trade;, o desenvolvimento desse sistema só foi possível graças aos materiais da MIT sobre o XV6, a versão 1.0 do sistema operacional LINUX&trade; e também a disponibilização dos códigos-fonte na The UNIX&trade; Heritage Society.
 		    <br> Para mais informações sobre o sistema ou interesse em contribuição, entre em contato. </p>
 		</div>
                 <div class="card txfs-card">
-                    <h3>TXFS</h3>
-		    <p> Um sistema de arquivos estilo UNIX&trade; com suporte nativo a RAID dinâmico via software (similarmente ao ZFS), journaling, snapshots, criptografia nativa a nível de sistema de arquivos ou por arquivo, compressão por sistema de arquivos ou por arquivo, deduplicação de dados, verificação de integridade avançada, subvolumes com atributos diferentes e possibilidade de montagem separada, suporte a atributos extendidos e além de tudo isso ofereceria otimizações avançadas por meio da detetecção do tipo de dispositivo (otimizações específicas para dispositivos onde a fragmentação não importa, SSDs com tempo de vida limitado, entre outros).
+                    <h3 data-i18n="txfs_title">TXFS</h3>
+		    <p data-i18n="txfs_text"> Um sistema de arquivos estilo UNIX&trade; com suporte nativo a RAID dinâmico via software (similarmente ao ZFS), journaling, snapshots, criptografia nativa a nível de sistema de arquivos ou por arquivo, compressão por sistema de arquivos ou por arquivo, deduplicação de dados, verificação de integridade avançada, subvolumes com atributos diferentes e possibilidade de montagem separada, suporte a atributos extendidos e além de tudo isso ofereceria otimizações avançadas por meio da detetção do tipo de dispositivo (otimizações específicas para dispositivos onde a fragmentação não importa, SSDs com tempo de vida limitado, entre outros).
                 </div>
 
             </div>
@@ -99,22 +104,24 @@
 	    	
 	<section class="banner banner-end">
             <div class="banner-text">
-               <h2> Explore meus posts pessoais </h2>
-	       <p> Bom, se você chegou até aqui é porque se interessou, não é? - Dá uma olhada, estou sempre adicionando novidades </p>
-	       <a href="posts.html" class="btn"> Ver Posts </a>
+               <h2 data-i18n="posts_banner_title"> Explore meus posts pessoais </h2>
+	       <p data-i18n="posts_banner_text"> Bom, se você chegou até aqui é porque se interessou, não é? - Dá uma olhada, estou sempre adicionando novidades </p>
+	       <a href="posts.html" class="btn" data-i18n="btn_view_posts"> Ver Posts </a>
             </div>
         </section>
     </main>
 
-    <footer>
+<footer>
 	    <div class="social-links">
 		<a href="https://www.linkedin.com/in/arthur-de-s-manske-b0aa58377/">💼 LinkedIn</a>
 		<a href="https://github.com/arthur-manske">🐙 GitHub</a>
 	    </div>
-
-	    <p>© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
-    </footer>
+ 
+	    <p data-i18n="footer_rights">© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
+	</footer>
+    <script src="js/i18n.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/dark.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>

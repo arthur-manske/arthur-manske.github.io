@@ -224,7 +224,35 @@ footer p {
 }
 
 header nav {
+    display: flex;
+    align-items: center;
     transition: all 0.5s ease-in-out;
+}
+
+.lang-switch {
+    display: flex;
+    gap: 5px;
+    margin-left: 15px;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--color-themed-text);
+    color: var(--color-themed-text);
+    cursor: pointer;
+    padding: 2px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background: var(--color-themed-text);
+    color: var(--color-bg);
+}
+
+.lang-btn:hover {
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {

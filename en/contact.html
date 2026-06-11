@@ -24,23 +24,18 @@
         
         <nav>
             <ul>
-                <li><a href="./index.html" data-i18n="nav_home">Início</a></li>
-                <li><a href="./posts.html" data-i18n="nav_posts">Posts</a></li>
-                <li><a href="./contact.html" class="active" data-i18n="nav_contact">Contato</a></li>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./posts.html">Posts</a></li>
+                <li><a href="./contact.html" class="active">Contato</a></li>
             </ul>
-            <div class="lang-switch">
-                <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
-                <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
-            </div>
-        </nav>
         </nav>
     </header>
 
     <main>
         <section class="banner banner-main">
             <div class="banner-text">
-                <h2 data-i18n="contact_title">Entre em contato</h2>
-                <p data-i18n="contact_subtitle">Preencha o formulário abaixo para me enviar uma mensagem.</p>
+                <h2>Entre em contato</h2>
+                <p>Preencha o formulário abaixo para me enviar uma mensagem.</p>
             </div>
         </section>
 
@@ -49,22 +44,22 @@
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_next" value="http://arthur-manske.github.io/contact.html?success=1">
 
-<label for="name" data-i18n="label_name">Nome</label>
-                <input type="text" id="name" name="name" required data-i18n-placeholder="placeholder_name" placeholder="Seu nome">
- 
-                <label for="email" data-i18n="label_email">E-mail</label>
-                <input type="email" id="email" name="email" required data-i18n-placeholder="placeholder_email" placeholder="Seu e-mail">
- 
-                <label for="message" data-i18n="label_message">Mensagem</label>
-                <textarea id="message" name="message" rows="6" required data-i18n-placeholder="placeholder_message" placeholder="Digite sua mensagem"></textarea>
- 
-                <button type="submit" class="btn" data-i18n="btn_send">Enviar</button>
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" rows="6" required placeholder="Digite sua mensagem"></textarea>
+
+                <button type="submit" class="btn">Enviar</button>
             </form>
         </section>
         
 	<section class="banner banner-end">
             <div class="banner-text">
-                <h2 data-i18n="contact_respect">Seja respeitoso</h2>
+                <h2>Seja respeitoso</h2>
             </div>
         </section>
     </main>
@@ -74,15 +69,14 @@
             <a href="https://www.linkedin.com/in/arthur-de-s-manske-b0aa58377/">💼 LinkedIn</a>
             <a href="https://github.com/arthur-manske">🐙 GitHub</a>
         </div>
-        <p data-i18n="footer_rights">© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
+        <p>© 2024 Arthur de Souza Manske. Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/dark.js"></script>
-    <script src="js/i18n.js"></script>
     <script>
       const params = new URLSearchParams(window.location.search);
       if (params.get("success")) {
-          alert(i18n.t("msg_success"));
+          alert("Mensagem enviada com sucesso!");
       }
     </script>
 </body>
